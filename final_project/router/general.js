@@ -30,7 +30,7 @@ public_users.post("/register", (req, res) => {
 // Get the book list available in the shop
 public_users.get('/', async (req, res) => {
     try {
-        const response = await axios.get('http://your-api-url/books');
+        const response = await axios.get('https://dq99-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/books');
         const bookList = response.data;
         return res.status(200).json(bookList);
     } catch (error) {
@@ -43,7 +43,7 @@ public_users.get('/isbn/:isbn', async (req, res) => {
     const isbn = req.params.isbn;
 
     try {
-        const response = await axios.get(`http://your-api-url/books/isbn/${isbn}`);
+        const response = await axios.get(`https://dq99-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/books/isbn/${isbn}`);
         const book = response.data;
         return res.status(200).json(book);
     } catch (error) {
@@ -56,7 +56,7 @@ public_users.get('/author/:author', async (req, res) => {
     const author = req.params.author;
 
     try {
-        const response = await axios.get(`http://your-api-url/books/author/${author}`);
+        const response = await axios.get(`https://dq99-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/books/author/${author}`);
         const booksByAuthor = response.data;
         return res.status(200).json(booksByAuthor);
     } catch (error) {
@@ -70,7 +70,7 @@ public_users.get('/title/:title', async (req, res) => {
     const title = req.params.title;
 
     try {
-        const response = await axios.get(`http://your-api-url/books/title/${title}`);
+        const response = await axios.get(`https://dq99-5000.theiadocker-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/books/title/${title}`);
         const booksWithTitle = response.data;
         return res.status(200).json(booksWithTitle);
     } catch (error) {
